@@ -13,7 +13,6 @@ export class MemberDetailResolver implements Resolve<User> {
     private router: Router,
     private alertify: AlertifyService){}
 
-    /* tslint:disable:no-string-literal */
     resolve(route: ActivatedRouteSnapshot): Observable<User> {
         return this.userService.getUser(route.params['id']).pipe(
             catchError(error => {
@@ -22,5 +21,4 @@ export class MemberDetailResolver implements Resolve<User> {
                 return of(null);
             }));
     }
-    /* tslint:enable:no-string-literal */
 }
